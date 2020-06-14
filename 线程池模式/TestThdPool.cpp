@@ -6,8 +6,7 @@
 
 int main()
 {
-    ThreadPool pool;
-    pool.Start(2);
+    ThreadPool pool(2);
     
     std::thread thd1([&pool]{
         for (int i = 0; i < 10; i++) {

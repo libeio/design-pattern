@@ -50,8 +50,6 @@
 - 示例程序: simple.cpp
 - 主要成员是一个线程数组和一个任务队列，在未运行(未调用 ThreadPool_run)之前，二者并没
   有任何关联，所以 ThreadPool_init 和 ThreadPool_addTask 调用顺序并不做具体要求。
-- 为了确保不同线程调用 ThreadPool_run 或 ThreadPool_addTask 对任务队列生产消费的幂等
-  性(一个任务只被处理一次)，定义了不同线程之间的同步锁与条件脉冲。
 - 定义 std::once_flag 变量，确保执行完毕后，对所有线程的销毁只执行一次
 
 ## 注意
