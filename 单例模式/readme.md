@@ -34,6 +34,12 @@
 - 在上述示例程序中，成员变量 instance 和类的构造函数都是私有的，不过如果你想将单例类
   定义为一个基类或模板类以作派生，也可以将这两部分定义为 protected 化。不过无论如何，
   都不应该 public 化。
+
+## 单例双检
+- [单例模式的双重检测](https://www.cnblogs.com/tangZH/p/10031337.html)
+- 测试程序: NoCheck.cpp DoubleCheck.cpp
+- 执行 NoCheck.cpp 程序时，多线程下可能会打印不止一个 `Construct SingleTon` 。
+  执行 DoubleCheck.cpp 程序时，因为进行了双检，所以多线程下只打印了一次 `Construct SingleTon` 。
   
 ## 相关的设计模式
 - 以下模式中，多数情况下只会生成一个实例:
